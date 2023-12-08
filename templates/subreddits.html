@@ -1,0 +1,14 @@
+{% include 'navbar.html' %}
+
+{% block content %}
+<div class="container">
+    {% for sub in subs %}
+    <!-- Add each subreddit to a panel container and add a link to view the subreddits posts -->
+    <!-- 6 LoC -->
+		<div class="panel panel-default">
+			<p>{{ sub.url }}</p>
+			<a href="/{{ loop.index0 }}" class="btn btn-primary" role="button">Posts</a>
+		</div>
+    {% endfor %}
+</div>
+{% endblock %}

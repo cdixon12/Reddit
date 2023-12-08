@@ -1,0 +1,60 @@
+{% include 'navbar.html' %}
+
+{% block content %}
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button[type=l_submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 7px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+</style>
+<div class="container">
+    <!-- Add a form entry area for your username and password -->
+    <!-- When the page is accessed and you aren't logged in-->
+    <!-- Have a single submission button to send the user info to the login endpoint-->
+    <!-- You can assume that the entries for the login will be nicely entered for this assignment -->
+    <!-- 37 LoC -->
+	<h2>Login</h2>
+	<p>Welcome to my reddit frontend! Please login to your user account to view your preferred subreddits!</p>
+	<form action="/login" method="POST">
+    	<label for="username"><b>Username</b></label>
+    	<input type="text" placeholder="Enter Username" name="username" required >
+
+    	<label for="password"><b>Password</b></label>
+    	<input type="password" placeholder="Enter Password" name="password" required>
+    	<button type="l_submit" style="width:100%">Login</button>
+    	<label>
+	</form>
+</div>
+
+{% endblock %}

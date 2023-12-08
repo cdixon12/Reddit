@@ -1,0 +1,75 @@
+{% include 'navbar.html' %}
+
+{% block content %}
+
+<style>
+    /* add some style to your settings page using CSS */
+    /* 30 LoC */
+	* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+input[type=submit] {
+	margin-top: 50px 
+}
+</style>
+
+<div class="container">
+    <!-- Add a form entry area for each attribute in your settings object -->
+    <!-- When the page is accessed show the current settings in the entry areas -->
+    <!-- Have a single submission button to send the new settings to the backend -->
+    <!-- You can assume that the entries for the settings will be nicely entered for this assignment -->
+    <!-- 55 LoC -->
+	<body>
+	<h2>Settings</h2>
+
+	<div class="row">
+  		<div class="column" style="background-color:#F5F5F5;">
+			<form action="/settings" method="POST">
+  				<label for="sub_regex">Sub Regex:</label><br>
+  				<input type="text" name="sub_regex" id="sub_regex" value="{{user.sub_regex}}"><br>
+  				<label for="sub_num">Sub Num:</label><br>
+  				<input type="text" name="sub_num" id="sub_num" value="{{user.sub_num}}"><br>
+  				<label for="sub_reverse">Sub Reverse:</label><br>
+  				<input type="text" name="sub_reverse" id="sub_reverse" value="{{user.sub_reverse}}"><br>
+				<input type="submit" value="Save Changes" class="btn btn-primary">
+ 		</div>
+  		<div class="column" style="background-color:#F5F5F5;">
+  				<label for="title_regex">Title Regex:</label><br>
+  				<input type="text" name="title_regex" id="title_regex" value="{{user.title_regex}}"><br>
+  				<label for="title_num">Title Num:</label><br>
+  				<input type="text" name="title_num" id="title_num" value="{{user.title_num}}"><br>
+  				<label for="title_reverse">Title Reverse:</label><br>
+  				<input type="text" name="title_reverse" id="title_reverse" value="{{user.title_reverse}}"><br>
+  				<label for="title_attr">Title Attribute:</label><br>
+  				<input type="text" name="title_attr" id="title_attr" value="{{user.title_attr}}"><br>
+		</div>
+  		<div class="column" style="background-color:#F5F5F5;">
+  				<label for="comment_regex">Comment Regex:</label><br>
+  				<input type="text" name="comment_regex" id="comment_regex" value="{{user.comment_regex}}"><br>
+  				<label for="comment_num">Comment Num:</label><br>
+  				<input type="text" name="comment_num" id="comment_num" value="{{user.comment_num}}"><br>
+  				<label for="comment_reverse">Comment Reverse:</label><br>
+  				<input type="text" name="comment_reverse" id="comment_reverse" value="{{user.comment_reverse}}"><br>
+  				<label for="comment_attr">Comment Attribute:</label><br>
+  				<input type="text" name="comment_attr" id="comment_attr" value="{{user.comment_attr}}"><br>
+			</form>	
+		</div>
+	</div>
+	</body>
+</div>
+{% endblock %}

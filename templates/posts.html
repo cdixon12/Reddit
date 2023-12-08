@@ -1,0 +1,18 @@
+{% include 'navbar.html' %}
+
+{% block content %}
+<div class="container">
+    {% for post in posts %}
+    <!-- Add each post to a panel container and add a link to view the posts comments -->
+    <!-- Use a flask filter to correctly render the markdown -->
+    <!-- 9 LoC -->
+		<div class="panel panel-default">
+			<div class="panel-heading"><b>{{ post.title  }}</b></div>
+			<div class="panel-body">
+				<p>{{ post.text | markdown }}</p>
+				<a href="/{{ sub_id }}/{{ loop.index0 }}" class="btn btn-primary" role="button">Comments</a>
+			</div>
+		</div>
+    {% endfor %}
+</div>
+{% endblock %}

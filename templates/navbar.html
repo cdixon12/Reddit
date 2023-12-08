@@ -1,0 +1,17 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block content %}
+<nav class="navbar navbar-default">
+    <!-- Add a navbar to your site, include the same elements as a seen in the screenshots -->
+    <!-- 27 LoC -->
+	<a class="navbar-brand" href="/">Home</a>
+	<form  action='' method="POST" class="form-inline">
+    	<input class="form-control mr-sm-2" style="margin-top: 7px" type="text" name="nav_filter" placeholder="Filter" aria-label="Filter">
+    	<button class="btn btn-default" style="vertical-align: top; margin-top: 7px" type="nav_submit">Submit</button>
+		<div class="navbar-right" style="padding-right:40px">
+        	<a class="navbar-brand" href="/settings">Settings</a>
+        	<a class="navbar-brand" href="/login">Login</a>
+		</div>
+  	</form>
+</nav>
+{% endblock %}
